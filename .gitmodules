@@ -1,0 +1,6 @@
+[submodule "neotree"]
+	path = neotree
+	url = https://github.com/jaypei/emacs-neotree.git
+[submodule "origami.el"]
+	path = origami.el
+	url = https://github.com/gregsexton/origami.el
