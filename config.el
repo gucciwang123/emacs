@@ -53,8 +53,12 @@
 
 ;;multiple cursors
 (require 'multiple-cursors)
-(global-unset-key (kbd "M-<down-mouse-1>"))
-(global-set-key (kbd "M-<mouse-1>") 'mc/add-cursor-on-click)
+(global-unset-key (kbd "S-<down-mouse-1>"))
+(global-set-key (kbd "S-<mouse-1>") 'mc/add-cursor-on-click)
+(global-set-key (kbd "C-S-1") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-S-2") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-S-3") 'mc/skip-to-next-like-this)
+(global-set-key (kbd "C-S-4") 'mc/skip-to-previous-like-this)
 
 ;;origami
 (add-to-list 'load-path "~/emacs/origami.el/")
@@ -135,9 +139,8 @@ That is, a string used to represent it on the tab bar."
                    "*Ediff Registry*"
 				   "*terminal*
 					*Backtrace*"))
-         (list "#hide"))
-        (t (list (or (cdr (project-current))
-                     (expand-file-name default-directory))))))
+         (list "Output"))
+        (t (list "Sources"))))
 (setq tabbar-buffer-groups-function #'my/tabbar-buffer-groups)
 ;;keybinds
 (global-set-key (kbd "C-q") 'tabbar-backward)
